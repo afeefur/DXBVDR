@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VDR Entry Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f8f8f8;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      display: none; 
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    input[type="text"],
+    textarea,
+    select,
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .row {
+      display: flex;
+      gap: 20px;
+    }
+
+    .row > div {
+      flex: 1;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 600px) {
+      .row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<form action="https://yourPowerAutomateURLHere" method="POST" enctype="multipart/form-data">
+  
+  <!-- Title (Required) -->
+  <label for="title">Title <span style="color: red">*</span></label>
+  <input type="text" name="title" id="title" required />
+
+  <!-- Vehicle and Equipment -->
+  <div class="row">
+    <div>
+      <label for="vehicle">Vehicle <span style="color: red">*</span></label>
+      <select name="vehicle" id="vehicle" required>
+	<option value="">-- Select Vehicle --</option>
+  	<option value="LQP 495">LQP 495</option>
+  	<option value="LQP 499">LQP 499</option>
+  	<option value="LQP 500">LQP 500</option>
+  	<option value="LQP 501">LQP 501</option>
+  	<option value="LQP 508">LQP 508</option>
+  	<option value="LQP 510">LQP 510</option>
+  	<option value="LQP 511">LQP 511</option>
+  	<option value="LQP 517">LQP 517</option>
+  	<option value="LQP 518">LQP 518</option>
+  	<option value="LQP 522">LQP 522</option>
+  	<option value="LQP 523">LQP 523</option>
+  	<option value="LQP-524">LQP-524</option>
+  	<option value="MTS-01">MTS-01</option>
+  	<option value="MTS-02">MTS-02</option>
+  	<option value="MTS-03">MTS-03</option>
+  	<option value="MTS-04">MTS-04</option>
+ 	<option value="ISZ-001">ISZ-001</option>
+  	<option value="ISZ-002">ISZ-002</option>
+  	<option value="MDP 512">MDP 512</option>
+  	<option value="NVE 468">NVE 468</option>
+  	<option value="NVE 469">NVE 469</option>
+  	<option value="NVE 474">NVE 474</option>
+  	<option value="NVE 476">NVE 476</option>
+  	<option value="T-181">T-181</option>
+      </select>
+    </div>
+    <div>
+      <label for="equipment">Equipment</label>
+      <input type="text" name="equipment" id="equipment" />
+    </div>
+  </div>
+
+  <!-- Location and Aircraft Delay -->
+  <div class="row">
+    <div>
+      <label for="location">Location <span style="color: red">*</span></label>
+      <select name="location" id="location" required>
+        <option value="">-- Select Location --</option>
+        <option value="Apron">Apron</option>
+        <option value="GSE Road">GSE Road</option>
+	<option value="Depot">Depot</option>
+      </select>
+    </div>
+    <div>
+      <label for="aircraftDelay">Aircraft Delay <span style="color: red">*</span></label>
+      <select name="aircraftDelay" id="aircraftDelay" required>
+        <option value="">-- Select --</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+	<option value="Potential">Potential</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <label for="description">Description <span style="color: red">*</span></label>
+  <textarea name="description" id="description" rows="4" required></textarea>
+
+  <!-- Attachment -->
+  <label for="attachment">Attachment</label>
+  <input type="file" name="attachment" id="attachment" />
+
+  <!-- Submit -->
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
